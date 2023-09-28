@@ -38,11 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'ckeditor'
+    'corsheaders',
+    'ckeditor',    
+    'graphene_django',
+    'blog',    
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,3 +134,12 @@ MEDIA_URL = '/media/'
 
 # Change default User model
 AUTH_USER_MODEL = 'blog.User'
+
+# Configure GraphQL
+GRAPHENE = {
+    'SCHEMA' : 'blog.schema.schema'
+}
+
+# CORS settings
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = ('http://localhost:8080',) # Matches the port that vue.js uses
