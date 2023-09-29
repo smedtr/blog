@@ -1,14 +1,9 @@
-import { apolloClient } from "@/apollo-config";
-
-// import './assets/main.css'
-
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
 import './index.css'
+import router from './router'
 
-// const app = createApp(App)
-// app.use(router)
-// app.mount('#app')
+import { apolloProvider } from "@/apollo-config";
+import { createPinia } from "pinia";
 
-createApp(App).use(router).use(apolloClient)
+createApp(App).use(createPinia()).use(router).use(apolloProvider).mount("#app");
