@@ -1,4 +1,7 @@
 import graphene
-from blog import queries
+from blog import queries, mutations
 
-schema = graphene.Schema(query=queries.Query)
+schema = graphene.Schema(
+    query=queries.Query, 
+    mutation=mutations.Mutation
+    )
