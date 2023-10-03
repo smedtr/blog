@@ -44,8 +44,8 @@
   </template>
   
   <script>
-  import { useUserStore } from "@/stores/user";
-  import { USER_SIGNIN } from "@/mutations";
+  import { useUserStore } from '@/stores/user'
+  import { USER_SIGNIN } from '@/mutations'
   
   export default {
     name: "SignInView",

@@ -110,3 +110,29 @@ export const UPDATE_USER_PROFILE = gql`
     }
   }
 `;
+
+export const CURRENT_USER = gql`
+  query ($username: String!) {
+    currentUser(username: $username) {
+      id
+      username
+      firstName
+      lastName
+      email
+      avatar
+      bio
+      location
+      website
+      commentSet {
+        id
+        content
+        post {
+          id
+          title
+          slug
+        }
+        isApproved
+      }
+    }
+  }
+`;

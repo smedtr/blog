@@ -6,9 +6,9 @@ import CategoryView from '@/views/main/Category.vue'
 import TagView from '@/views/main/Tag.vue'
 import AllCategoriesView from '@/views/main/AllCategories.vue'
 import AllTagsView from '@/views/main/AllTags.vue'
-import SignInView from "@/views/user/SignIn.vue";
-import SignUpView from "@/views/user/SignUp.vue";
-import ProfileView from "@/views/user/Profile.vue"
+import SignInView from '@/views/user/SignIn.vue'
+import SignUpView from '@/views/user/SignUp.vue'
+import ProfileView from '@/views/user/Profile.vue'
 
 const routes = [
   {

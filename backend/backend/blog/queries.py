@@ -14,6 +14,8 @@ class Query(graphene.ObjectType):
     posts_by_category = graphene.List(types.PostType, category=graphene.String())
     posts_by_tag = graphene.List(types.PostType, tag=graphene.String())
     posts_by_slug = graphene.List(types.PostType, slug=graphene.String())
+
+    current_user = graphene.Field(types.UserType, username=graphene.String())
     
 
     def resolve_site(root, info):
@@ -54,4 +56,9 @@ class Query(graphene.ObjectType):
     def resolve_all_users(root, info):
         return (
             models.User.objects.all()
+        )
+    
+    def resolve_current_user(self, info, username):
+        return (
+            models.User.objects.get(username__iexact=username)
         )

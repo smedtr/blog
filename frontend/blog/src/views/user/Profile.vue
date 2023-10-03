@@ -247,6 +247,7 @@
     },
   
     async created() {
+      //console.log(this.userStore.getUser.username)
       try {
         const user = await this.$apollo.query({
           query: CURRENT_USER,
@@ -255,6 +256,7 @@
           },
         });
         this.userInfo = user.data.currentUser;
+        console.log(this.userInfo)
       } catch (e) {
         console.log(e);
       }
