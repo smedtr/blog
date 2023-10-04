@@ -234,7 +234,7 @@
       return {
         userInfo: {},
         modalIsHidden: true,
-        profileUpdateInputs: {
+        profileUpdateInputs: {          
           firstName: "",
           lastName: "",
           avatar: null,
@@ -247,7 +247,6 @@
     },
   
     async created() {
-      //console.log(this.userStore.getUser.username)
       try {
         const user = await this.$apollo.query({
           query: CURRENT_USER,
@@ -256,7 +255,15 @@
           },
         });
         this.userInfo = user.data.currentUser;
-        console.log(this.userInfo)
+        //console.log(this.userInfo)
+        // Populating the modal with the data of the user
+        this.profileUpdateInputs.firstName = user.data.currentUser.firstName
+        this.profileUpdateInputs.lastName = user.data.currentUser.lastName
+        this.profileUpdateInputs.avatar = user.data.currentUser.avatar
+        this.profileUpdateInputs.email = user.data.currentUser.email
+        this.profileUpdateInputs.location = user.data.currentUser.location
+        this.profileUpdateInputs.website = user.data.currentUser.website
+        this.profileUpdateInputs.bio = user.data.currentUser.bio        
       } catch (e) {
         console.log(e);
       }
@@ -279,8 +286,7 @@
         localStorage.setItem(
           "user",
           JSON.stringify(user.data.updateUserProfile.user)
-        );
-  
+        );  
         window.location.reload(); // Refresh the page
       },
   

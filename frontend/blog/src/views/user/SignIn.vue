@@ -52,6 +52,7 @@
   
     setup() {
       const userStore = useUserStore();
+      console.log(userStore)
       return { userStore };
     },
   
@@ -74,7 +75,7 @@
           },
         });
         this.userStore.setToken(user.data.tokenAuth.token);
-        this.userStore.setUser(user.data.tokenAuth.user);
+        this.userStore.setUser(user.data.tokenAuth.user);        
       },
     },
   };
