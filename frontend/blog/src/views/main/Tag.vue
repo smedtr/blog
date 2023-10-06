@@ -1,6 +1,6 @@
 <template>
   <div class="all-tags">
-    <h1 class="text-5xl font-extrabold mb-2">Tag Name</h1>
+    <h1 class="text-5xl font-extrabold mb-2">Tag Name : {{ $route.params.tag }}</h1>
     <p class="text-gray-500 text-lg mb-5">
       A blog created with Django, Vue.js and TailwindCSS
     </p>

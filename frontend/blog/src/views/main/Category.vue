@@ -1,6 +1,6 @@
 <template>
   <div class="all- posts">
-    <h1 class="text-5xl font-extrabold mb-2">Category Name</h1>
+    <h1 class="text-5xl font-extrabold mb-2">Category Name : {{ $route.params.category }}</h1>
     <p class="text-gray-500 text-lg mb-5">
       A blog created with Django, Vue.js and TailwindCSS
     </p>
