@@ -39,18 +39,19 @@ class Query(graphene.ObjectType):
         )
     
     def resolve_posts_by_category(root, info, category):
-        return (
-            models.Posts.objects.filter(category__slug__iexact=category)
+        print('resolve_posts_by_category:' + category)
+        return (            
+            models.Post.objects.filter(category__slug__iexact=category)
         )
     
     def resolve_posts_by_tag(root, info, tag):
         return (
-            models.Posts.objects.filter(tag__slug__iexact=tag)
+            models.Post.objects.filter(tag__slug__iexact=tag)
         )
     
     def resolve_posts_by_slug(root, info, slug):
         return (
-            models.Posts.objects.get(slug__iexact=slug)
+            models.Post.objects.get(slug__iexact=slug)
         )
     
     def resolve_all_users(root, info):

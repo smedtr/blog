@@ -7,7 +7,7 @@
       <router-link
         v-for="category in this.allCategories"
         :key="category.name"
-        class=". . ."
+        class="my-2 mr-5 text-sm font-medium uppercase text-teal-500 hover:underline hover:text-teal-700"
         :to="`/category/${category.slug}`"
         >{{ category.name }}</router-link
       >
@@ -16,28 +16,22 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import PostList from "@/components/PostList.vue";
-import { POSTS_BY_CATEGORY } from "@/queries";
+import { ALL_CATEGORIES } from "@/queries";
 
 export default {
-  components: { PostList },
-  name: "CategoryView",
+  name: "CategoriesView",
 
   data() {
     return {
-      postsByCategory: null,
+      allCategories: null,
     };
   },
 
   async created() {
     const posts = await this.$apollo.query({
-      query: POSTS_BY_CATEGORY,
-      variables: {
-        category: this.$route.params.category,
-      },
+      query: ALL_CATEGORIES,
     });
-    this.postsByCategory = posts.data.postsByCategory;
+    this.allCategories = posts.data.allCategories;
   },
 };
 </script>

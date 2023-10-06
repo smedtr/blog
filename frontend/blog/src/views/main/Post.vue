@@ -125,6 +125,7 @@ export default {
   computed: {
     // Filters out the unapproved comments
     approvedComments() {
+      console.log(this.comments)
       return this.comments.filter((comment) => comment.isApproved);
     },
     numberOfApprovedComments() {
@@ -140,6 +141,7 @@ export default {
         slug: this.$route.params.slug,
       },
     });
+    console.log(post)
     this.postBySlug = post.data.postBySlug;
     this.comments = post.data.postBySlug.commentSet;
 
