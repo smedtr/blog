@@ -2,7 +2,7 @@
     <div class="flex flex-col">
       <div>
         <img
-          :src="'/uploads/' + this.userInfo.avatar"
+          :src="this.mediaLocation + this.userInfo.avatar"
           alt=""
           class="w-32 h-3w-32 rounded-lg object-contain mx-auto"
         />
@@ -233,6 +233,7 @@
     data() {
       return {
         userInfo: {},
+        mediaLocation: "http://127.0.0.1:8000/media/",
         modalIsHidden: true,
         profileUpdateInputs: {          
           firstName: "",

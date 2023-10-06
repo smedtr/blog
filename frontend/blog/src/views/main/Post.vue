@@ -3,9 +3,9 @@
     <div class="flex flex-col place-items-center border-b-2">
       <!-- Featured Image and title -->
       <img
-        :src="'/uploads/' + this.postBySlug.featuredImage"
+        :src="this.mediaLocation + this.postBySlug.featuredImage"
         class="w-full my-5"
-      />
+      />      
       <h1 class="text-center text-5xl font-extrabold mb-5">
         {{ this.postBySlug.title }}
       </h1>
@@ -111,6 +111,7 @@ export default {
 
   data() {
     return {
+      mediaLocation: "http://127.0.0.1:8000/media/",
       postBySlug: null,
       comments: null,
       liked: false,

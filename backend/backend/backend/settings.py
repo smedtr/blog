@@ -131,6 +131,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 MEDIA_URL = '/media/'
+# URL for avatars : http://localhost:5173/media/users/avatars/2023/10/04/Avatar_Men_8dH9Kz3.jpg
+# http://127.0.0.1:8000/media/users/avatars/2023/10/04/Avatar_Men_8dH9Kz3.jpg
 
 # Change default User model
 AUTH_USER_MODEL = 'blog.User'
