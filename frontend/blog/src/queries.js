@@ -55,48 +55,10 @@ export const POSTS_BY_TAG = gql`
   }
 `;
 
+
 export const POST_BY_SLUG = gql`
   query ($slug: String!) {
-    postBySlug(slug: $slug) {
-      id
-      title
-      content
-      featuredImage
-      createdAt
-      category {
-        name
-        slug
-      }
-      tag {
-        name
-        slug
-      }
-      user {
-        id
-        username
-        firstName
-        lastName
-      }      
-      likes {
-        id
-      }
-      commentSet {
-        id
-        content
-        createdAt
-        isApproved
-        user {
-          username
-          avatar
-        }  
-      }
-    }
-  }
-`;
-
-export const SAVED_POST_BY_SLUG = gql`
-  query ($slug: String!) {
-    postBySlug(slug: $slug) {
+    postsBySlug(slug: $slug) {
       id
       title
       content

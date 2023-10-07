@@ -125,7 +125,7 @@ export default {
   computed: {
     // Filters out the unapproved comments
     approvedComments() {
-      console.log(this.comments)
+      // console.log(this.comments)
       return this.comments.filter((comment) => comment.isApproved);
     },
     numberOfApprovedComments() {
@@ -134,32 +134,40 @@ export default {
   },
 
   async created() {
-    // Get the post before the instance is mounted
-    const post = await this.$apollo.query({
-      query: POST_BY_SLUG,
-      variables: {
-        slug: this.$route.params.slug,
-      },
-    });
-    console.log(post)
-    this.postBySlug = post.data.postBySlug;
-    this.comments = post.data.postBySlug.commentSet;
+    // Get the post before the instance is mounted    
+    try {
+        const post = await this.$apollo.query({
+          query: POST_BY_SLUG,
+          variables: {
+            slug: this.$route.params.slug,
+          },
+        });
+        // We krijgen een array binnen ipv 1 record
+        // Het zou zo moeten zijn dat we er zowiezo 1 record krijgen met de slug
+        this.postBySlug = post.data.postsBySlug[0];        
+        this.comments = post.data.postsBySlug[0].commentSet;
 
-    // Check if the current user has liked the post
-    // Get the current user id
-    this.userID = JSON.parse(localStorage.getItem("user")).id;
+        // Check if the current user has liked the post
+        // Get the current user id
+        this.userID = JSON.parse(localStorage.getItem("user")).id;
 
-    // Find if the current user has liked the post
-    let likedUsers = this.postBySlug.likes;
+        // Find if the current user has liked the post
+        let likedUsers = this.postBySlug.likes;
 
-    for (let likedUser in likedUsers) {
-      if (likedUsers[likedUser].id === this.userID) {
-        this.liked = true;
-      }
-    }
+        for (let likedUser in likedUsers) {
+          if (likedUsers[likedUser].id === this.userID) {
+            this.liked = true;
+          }
+        }
 
-    // Get the number of likes
-    this.numberOfLikes = parseInt(this.postBySlug.numberOfLikes);
+        // Get the number of likes
+        this.numberOfLikes = parseInt(this.postBySlug.numberOfLikes);
+          
+        } catch (e) {
+          console.log(e);
+        }
+      //  
+    
   },
 
   mounted() {

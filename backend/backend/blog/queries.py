@@ -51,7 +51,7 @@ class Query(graphene.ObjectType):
     
     def resolve_posts_by_slug(root, info, slug):
         return (
-            models.Post.objects.get(slug__iexact=slug)
+            models.Post.objects.filter(slug__iexact=slug)
         )
     
     def resolve_all_users(root, info):
