@@ -143,9 +143,9 @@ export default {
           },
         });
         // We krijgen een array binnen ipv 1 record
-        // Het zou zo moeten zijn dat we er zowiezo 1 record krijgen met de slug
-        this.postBySlug = post.data.postsBySlug[0];        
-        this.comments = post.data.postsBySlug[0].commentSet;
+        // Het zou zo moeten zijn dat we er zowiezo 1 record krijgen met de slug        
+        this.postBySlug = post.data.postBySlug;        
+        this.comments = post.data.postBySlug.commentSet;
 
         // Check if the current user has liked the post
         // Get the current user id

@@ -58,7 +58,7 @@ export const POSTS_BY_TAG = gql`
 
 export const POST_BY_SLUG = gql`
   query ($slug: String!) {
-    postsBySlug(slug: $slug) {
+    postBySlug(slug: $slug) {
       id
       title
       content

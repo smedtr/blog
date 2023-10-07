@@ -13,7 +13,8 @@ class Query(graphene.ObjectType):
     
     posts_by_category = graphene.List(types.PostType, category=graphene.String())
     posts_by_tag = graphene.List(types.PostType, tag=graphene.String())
-    posts_by_slug = graphene.List(types.PostType, slug=graphene.String())
+    #posts_by_slug = graphene.List(types.PostType, slug=graphene.String())
+    post_by_slug = graphene.Field(types.PostType, slug=graphene.String())
 
     current_user = graphene.Field(types.UserType, username=graphene.String())
     
@@ -38,8 +39,7 @@ class Query(graphene.ObjectType):
             models.Tag.objects.all()
         )
     
-    def resolve_posts_by_category(root, info, category):
-        print('resolve_posts_by_category:' + category)
+    def resolve_posts_by_category(root, info, category):        
         return (            
             models.Post.objects.filter(category__slug__iexact=category)
         )
@@ -49,9 +49,14 @@ class Query(graphene.ObjectType):
             models.Post.objects.filter(tag__slug__iexact=tag)
         )
     
-    def resolve_posts_by_slug(root, info, slug):
+    #def resolve_posts_by_slug(root, info, slug):
+    #    return (
+    #        models.Post.objects.filter(slug__iexact=slug)
+    #    )
+    
+    def resolve_post_by_slug(root, info, slug):
         return (
-            models.Post.objects.filter(slug__iexact=slug)
+            models.Post.objects.filter(slug__iexact=slug).first()
         )
     
     def resolve_all_users(root, info):

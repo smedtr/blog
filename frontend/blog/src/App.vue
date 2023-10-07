@@ -169,7 +169,7 @@ export default {
     const siteInfo = await this.$apollo.query({
       query: SITE_INFO,
     });
-    this.mySite = siteInfo.data.site;
+    this.mySite = siteInfo.data.site;   
 
     if (this.user.token) {
       this.user.isAuthenticated = true;
