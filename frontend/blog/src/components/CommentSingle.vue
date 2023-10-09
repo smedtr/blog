@@ -3,8 +3,8 @@
     <div
       class="flex flex-row justify-start content-center items-center space-x-2 mb-2"
     >
-      <img
-        :src="`http://127.0.0.1:8000/media/${this.comment.user.avatar}`"
+      <img        
+        :src="this.mediaLocation + this.comment.user.avatar"
         alt=""
         class="w-10"
       />
@@ -48,6 +48,7 @@ export default {
   name: "CommentSingleComponent",
   data() {
     return {
+      mediaLocation: "http://127.0.0.1:8000/media/",
       liked: false,
       numberOfLikes: 0,
     };
