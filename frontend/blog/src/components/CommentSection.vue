@@ -6,7 +6,7 @@
       <div v-if="!this.user.isAuthenticated">
         You need to
         <router-link
-          to="/account"
+          to="/signin"
           class="text-teal-500 hover:underline hover:text-teal-700"
           >sign in</router-link
         >

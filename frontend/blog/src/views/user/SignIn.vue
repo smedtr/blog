@@ -9,7 +9,7 @@
               >
               <input
                 type="text"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring focus:ring-teal-300 focus:ring-opacity-50"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm border-2 focus:border-teal-500 focus:ring focus:ring-teal-300 focus:ring-opacity-50"
                 v-model="signInDetails.username"
               />
             </div>
@@ -18,10 +18,14 @@
                 >Password</label
               >
               <input
-                type="text"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring focus:ring-teal-300 focus:ring-opacity-50"
+                type="password"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm border-2
+                 focus:border-teal-500
+                 focus:ring
+                 focus:ring-teal-300
+                 focus:ring-opacity-50"
                 v-model="signInDetails.password"
-              />
+              />              
             </div>
           </div>
           <button
