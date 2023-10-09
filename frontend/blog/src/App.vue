@@ -179,7 +179,11 @@ export default {
   methods: {
     userSignOut() {
       this.userStore.removeToken();
-      this.userStore.removeUser();
+      this.userStore.removeUser();      
+      // this.$router.push('/') //go to home.vue
+      this.$router.push('/') //go to home.vue 
+      location.reload(); // Reloads the current page    
+       
     },
   },
 };

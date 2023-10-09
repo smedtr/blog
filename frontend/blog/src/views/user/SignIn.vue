@@ -79,7 +79,9 @@
           },
         });
         this.userStore.setToken(user.data.tokenAuth.token);
-        this.userStore.setUser(user.data.tokenAuth.user);        
+        this.userStore.setUser(user.data.tokenAuth.user);             
+        this.$router.push('/') //go to home.vue
+        //this.location.reload(); // Reloads the current page
       },
     },
   };
