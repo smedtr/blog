@@ -9,6 +9,7 @@ import AllTagsView from '@/views/main/AllTags.vue'
 import SignInView from '@/views/user/SignIn.vue'
 import SignUpView from '@/views/user/SignUp.vue'
 import ProfileView from '@/views/user/Profile.vue'
+import LogOutView from '@/views/user/LogOut.vue'
 
 const routes = [
   {
@@ -55,6 +56,11 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: ProfileView,
+  },
+  {
+    path: "/logout",
+    name: "Logout",
+    component: LogOutView,
   },
 ];
 

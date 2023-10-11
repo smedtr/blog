@@ -25,21 +25,22 @@
             v-if="!this.userStore.getIsLoggedIn"
             to="/signin"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
-            >Sign in {{ this.userStore.getLoggedIn }}</router-link
+            >Sign in</router-link
           >
           
           <router-link
             v-if="this.userStore.getIsLoggedIn"
             to="/profile"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
-            >Profile {{ this.userStore.getLoggedIn }}</router-link
+            >Profile</router-link
           >
-          <a
+          <router-link
             v-if="this.userStore.getIsLoggedIn"
-            @click="userSignOut()"
+            to="/logout"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
-            >Sign Out</a
+            >Sign Out</router-link
           >
+
         </div>
         <div class="sm:hidden">
           <!-- Display als hamburger op een small device -->
@@ -90,12 +91,14 @@
                 >Profile</router-link
               >
 
-              <a
+              <router-link
                 v-if="this.userStore.getIsLoggedIn"
-                @click="userSignOut()"
+                to="/logout"
                 class="pl-4 text-xl font-sans font-medium hover:underline hover:text-teal-700"
-                >Sign Out</a
+                >Sign Out</router-link
               >
+              
+
             </nav>
           </div>
         </div>
@@ -158,14 +161,13 @@ export default {
     return {
       menuOpen: false,
       mySite: null,
-      user: {
-        isAuthenticated: this.userStore.getIsLoggedIn || null,
-        token: this.userStore.getToken || "",
-        info: this.userStore.getUser || {},
-      },
+      //user: {
+      //  isAuthenticated: this.userStore.getIsLoggedIn || null,
+      //  token: this.userStore.getToken || "",
+      //  info: this.userStore.getUser || {},
+      //},
       dataLoaded: false,      
-    };
-    
+    };    
   },
 
   async created() {
@@ -174,15 +176,6 @@ export default {
     });
     this.mySite = siteInfo.data.site; 
   },
-
-  methods: {
-    userSignOut() {
-      this.userStore.removeToken();
-      this.userStore.removeUser();      
-       
-      this.$router.push('/') //go to home.vue 
-      location.reload(); // Reloads the current page  
-    },
-  },
+  
 };
 </script>
