@@ -22,20 +22,20 @@
             >Tag</router-link
           >
           <router-link
-            v-if="!this.userStore.getIsLoggedIn"
+            v-if="!this.userStore.loggedIn"
             to="/signin"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
             >Sign in</router-link
           >
           
           <router-link
-            v-if="this.userStore.getIsLoggedIn"
+            v-if="this.userStore.loggedIn"
             to="/profile"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
             >Profile</router-link
           >
           <router-link
-            v-if="this.userStore.getIsLoggedIn"
+            v-if="this.userStore.loggedIn"
             to="/logout"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
             >Sign Out</router-link
@@ -78,21 +78,21 @@
               >
 
               <router-link
-                v-if="!this.userStore.getIsLoggedIn"
+                v-if="!this.userStore.loggedIn"
                 to="/signin"
                 class="pl-4 text-xl font-sans font-medium hover:underline hover:text-teal-700"
                 >Sign in</router-link
               >
 
               <router-link
-                v-if="this.userStore.getIsLoggedIn"
+                v-if="this.userStore.loggedIn"
                 to="/profile"
                 class="pl-4 text-xl font-sans font-medium hover:underline hover:text-teal-700"
                 >Profile</router-link
               >
 
               <router-link
-                v-if="this.userStore.getIsLoggedIn"
+                v-if="this.userStore.loggedIn"
                 to="/logout"
                 class="pl-4 text-xl font-sans font-medium hover:underline hover:text-teal-700"
                 >Sign Out</router-link
@@ -161,6 +161,7 @@ export default {
     return {
       menuOpen: false,
       mySite: null,
+      //loggedIn
       //user: {
       //  isAuthenticated: this.userStore.getIsLoggedIn || null,
       //  token: this.userStore.getToken || "",
