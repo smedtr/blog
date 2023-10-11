@@ -30,4 +30,5 @@ npm run build
 
 ### Pending Issues
 
-Logout/Login : Signout Signin komt niet goed bv. signout keert hem terug naar het basis scherm waar de logout is gegeven
+Logout/Login : Signout Signin komt niet goed bv. signout keert hem terug naar het basis scherm waar de logout is gegeven. 
+Zie ook https://jasonwatmore.com/vue-3-pinia-jwt-authentication-with-refresh-tokens-example-tutorial

@@ -22,25 +22,27 @@
             >Tag</router-link
           >
           <router-link
-            v-if="!this.user.isAuthenticated"
+            v-if="!this.userStore.getIsLoggedIn"
             to="/signin"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
-            >Sign in</router-link
+            >Sign in {{ this.userStore.getLoggedIn }}</router-link
           >
+          
           <router-link
-            v-if="this.user.isAuthenticated"
+            v-if="this.userStore.getIsLoggedIn"
             to="/profile"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
-            >Profile</router-link
+            >Profile {{ this.userStore.getLoggedIn }}</router-link
           >
           <a
-            v-if="this.user.isAuthenticated"
+            v-if="this.userStore.getIsLoggedIn"
             @click="userSignOut()"
             class="mx-2 font-sans font-medium hover:underline hover:text-teal-700"
             >Sign Out</a
           >
         </div>
         <div class="sm:hidden">
+          <!-- Display als hamburger op een small device -->
           <button
             type="button"
             class="ml-1 mr-1 h-8 w-8 rounded py-1"
@@ -75,21 +77,21 @@
               >
 
               <router-link
-                v-if="!this.user.isAuthenticated"
+                v-if="!this.userStore.getIsLoggedIn"
                 to="/signin"
                 class="pl-4 text-xl font-sans font-medium hover:underline hover:text-teal-700"
                 >Sign in</router-link
               >
 
               <router-link
-                v-if="this.user.isAuthenticated"
+                v-if="this.userStore.getIsLoggedIn"
                 to="/profile"
                 class="pl-4 text-xl font-sans font-medium hover:underline hover:text-teal-700"
                 >Profile</router-link
               >
 
               <a
-                v-if="this.user.isAuthenticated"
+                v-if="this.userStore.getIsLoggedIn"
                 @click="userSignOut()"
                 class="pl-4 text-xl font-sans font-medium hover:underline hover:text-teal-700"
                 >Sign Out</a
@@ -148,42 +150,38 @@ import { useUserStore } from "@/stores/user";
 
 export default {
   setup() {
-    const userStore = useUserStore();
+    const userStore = useUserStore();    
     return { userStore };
   },
 
-  data() {
+  data() {    
     return {
       menuOpen: false,
       mySite: null,
       user: {
-        isAuthenticated: false,
+        isAuthenticated: this.userStore.getIsLoggedIn || null,
         token: this.userStore.getToken || "",
         info: this.userStore.getUser || {},
       },
-      dataLoaded: false,
+      dataLoaded: false,      
     };
+    
   },
 
   async created() {
     const siteInfo = await this.$apollo.query({
       query: SITE_INFO,
     });
-    this.mySite = siteInfo.data.site;   
-
-    if (this.user.token) {
-      this.user.isAuthenticated = true;
-    }
+    this.mySite = siteInfo.data.site; 
   },
 
   methods: {
     userSignOut() {
       this.userStore.removeToken();
       this.userStore.removeUser();      
-      // this.$router.push('/') //go to home.vue
-      this.$router.push('/') //go to home.vue 
-      location.reload(); // Reloads the current page    
        
+      this.$router.push('/') //go to home.vue 
+      location.reload(); // Reloads the current page  
     },
   },
 };

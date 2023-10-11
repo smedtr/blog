@@ -50,13 +50,19 @@
   <script>
   import { useUserStore } from '@/stores/user'
   import { USER_SIGNIN } from '@/mutations'
+
+  import { createMemoryHistory, useRoute } from 'vue-router';
+  //import { router } from '@/helpers';
+  
+
+  const route = useRoute();
+  
   
   export default {
     name: "SignInView",
   
     setup() {
-      const userStore = useUserStore();
-      console.log(userStore)
+      const userStore = useUserStore();      
       return { userStore };
     },
   
@@ -79,9 +85,10 @@
           },
         });
         this.userStore.setToken(user.data.tokenAuth.token);
-        this.userStore.setUser(user.data.tokenAuth.user);             
-        this.$router.push('/') //go to home.vue
-        //this.location.reload(); // Reloads the current page
+        this.userStore.setUser(user.data.tokenAuth.user);         
+        // redirect to previous url of the history                        
+        this.$router.go(-1) 
+        //location.reload(); // Reloads the current page        
       },
     },
   };
