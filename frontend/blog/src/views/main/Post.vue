@@ -1,17 +1,18 @@
 <template>
   <div class="home">
-    <div class="flex flex-col place-items-center border-b-2">
-      <!-- Featured Image and title -->
-      <img v-if="this.postBySlug.featuredImage" 
-        :src="this.mediaLocation + this.postBySlug.featuredImage"
+    <div class="flex flex-col place-items-center border-b-2">     
+      <!-- Featured Image and title -->      
+      <img v-if="this.postBySlug?.featuredImage != undefined"        
+        :src="this.mediaLocation + this.postBySlug?.featuredImage"
         class="w-full my-5"      
-      />      
+      /> 
+
       <h1 class="text-center text-5xl font-extrabold mb-5">
-        {{ this.postBySlug.title }}
+        {{ this.postBySlug?.title }}
       </h1>
       <p class="text-gray-500 text-lg mb-2">
-        {{ formatDate(this.postBySlug.createdAt) }} - By
-        {{ this.postBySlug.user.username }}
+        {{ formatDate(this.postBySlug?.createdAt) }} - By
+        {{ this.postBySlug?.user.username }}
       </p>
     </div>
 
@@ -19,7 +20,7 @@
     <div class="flex flex-wrap my-4">
       <div class="mr-5 text-sm font-medium">Tags:</div>
       <router-link
-        v-for="tag in this.postBySlug.tag"
+        v-for="tag in this.postBySlug?.tag"
         :key="tag.name"
         class="mr-5 text-sm font-medium uppercase text-teal-500 hover:underline hover:text-teal-700"
         :to="`/tag/${tag.slug}`"
@@ -29,7 +30,7 @@
 
     <!-- Main content -->
     <div class="py-5 font-serif space-y-4">
-      <div v-html="this.postBySlug.content"></div>
+      <div v-html="this.postBySlug?.content"></div>
     </div>
 
     <!-- Like, Comment and Share -->
@@ -125,12 +126,12 @@ export default {
 
   computed: {
     // Filters out the unapproved comments
-    approvedComments() {
-      // console.log(this.comments)
-      return this.comments.filter((comment) => comment.isApproved);
+    approvedComments() {      
+      return this.comments?.filter((comment) => comment.isApproved);
     },
-    numberOfApprovedComments() {
-      return Object.keys(this.approvedComments).length;
+    numberOfApprovedComments() {            
+      //return Object.keys(this.approvedComments).length;
+      return this.approvedComments?.length;
     },
   },
 
@@ -143,7 +144,7 @@ export default {
             slug: this.$route.params.slug,
           },
         });
-        // Het zou zo moeten zijn dat we er zowiezo 1 record krijgen met de slug        
+        // Het zou zo moeten zijn dat we er zowiezo 1 record krijgen met de slug  
         this.postBySlug = post.data.postBySlug;               
         this.comments = post.data.postBySlug.commentSet;
 
@@ -160,6 +161,7 @@ export default {
           }
         }
 
+
         // Get the number of likes
         this.numberOfLikes = parseInt(this.postBySlug.numberOfLikes);
           
@@ -167,7 +169,6 @@ export default {
           console.log(e);
         }
       //  
-    
   },
 
   mounted() {
