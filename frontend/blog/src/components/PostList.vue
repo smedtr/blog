@@ -52,15 +52,15 @@
 
 <script>
 export default {
-  name: "PostListComponent",
+  name: "PostListComponent",  
   props: {
     posts: {
       type: Array,
-      required: true,
+      required: true,      
     },
   },
   computed: {
-    publishedPosts() {
+    publishedPosts() {      
       return this.posts.filter((post) => post.isPublished);
     },
   },

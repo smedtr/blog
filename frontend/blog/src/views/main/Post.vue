@@ -5,13 +5,7 @@
       <img v-if="this.postBySlug.featuredImage" 
         :src="this.mediaLocation + this.postBySlug.featuredImage"
         class="w-full my-5"      
-      />
-      <!-- 
-      <img
-        :src="this.mediaLocation + this.postBySlug.featuredImage"
-        class="w-full my-5"
-      />   
-       -->   
+      />      
       <h1 class="text-center text-5xl font-extrabold mb-5">
         {{ this.postBySlug.title }}
       </h1>
@@ -149,10 +143,8 @@ export default {
             slug: this.$route.params.slug,
           },
         });
-        // We krijgen een array binnen ipv 1 record
         // Het zou zo moeten zijn dat we er zowiezo 1 record krijgen met de slug        
-        this.postBySlug = post.data.postBySlug;  
-        console.log(this.postBySlug.featuredImage);      
+        this.postBySlug = post.data.postBySlug;               
         this.comments = post.data.postBySlug.commentSet;
 
         // Check if the current user has liked the post

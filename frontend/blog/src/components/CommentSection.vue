@@ -15,13 +15,14 @@
   
       <!-- If the user is authenticated -->
       <div v-else>
-        <div v-if="this.commentSubmitSuccess" class="">
+        <div v-if="this.commentSubmitSuccess" class="font-sans text-sm font-normal ml-1">
           Your comment will show up here after is has been approved.
         </div>
         <form action="POST" @submit.prevent="submitComment">
+          <!-- Comment block met text area -->          
           <textarea
             type="text"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring focus:ring-teal-300 focus:ring-opacity-50"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm border-2 focus:border-teal-500 focus:ring focus:ring-teal-300 focus:ring-opacity-50"
             rows="5"
             v-model="commentContent"
           />
@@ -90,7 +91,7 @@
       }
     },
     methods: {
-      submitComment() {
+      submitComment() {        
         if (this.commentContent !== "") {
           this.$apollo
             .mutate({

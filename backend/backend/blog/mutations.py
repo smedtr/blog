@@ -66,6 +66,8 @@ class CreateComment(graphene.Mutation):
         post_id = graphene.ID(required=True)
 
     def mutate(self, info, content, user_id, post_id):
+        print(content)        
+
         comment = models.Comment(
             content=content,
             user_id=user_id,

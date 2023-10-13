@@ -20,7 +20,7 @@ export default {
 
   data() {
     return {
-      allPosts: null,
+      allPosts: [], // return an empty array to please the prop definition
     };
   },
 
