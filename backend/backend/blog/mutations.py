@@ -97,6 +97,19 @@ class UpdatePostLike(graphene.Mutation):
 
         return UpdatePostLike(post=post)
 
+class UpdatePostPublish(graphene.Mutation):
+    post = graphene.Field(types.PostType)
+
+    class Arguments:
+        post_id = graphene.ID(required=True)
+        publish_flg = graphene.Boolean(required=True)
+
+    def mutate(self, info, post_id, publish_flg):
+        post = models.Post.objects.get(pk=post_id)
+        post.is_published = publish_flg
+        post.save()
+
+        return UpdatePostPublish(post=post)
 
 class UpdateCommentLike(graphene.Mutation):
     comment = graphene.Field(types.CommentType)
@@ -127,6 +140,7 @@ class Mutation(graphene.ObjectType):
     create_comment = CreateComment.Field()
 
     update_post_like = UpdatePostLike.Field()
+    update_post_publish = UpdatePostPublish.Field()
     update_comment_like = UpdateCommentLike.Field()
     update_user_profile = UpdateUserProfile.Field()
 

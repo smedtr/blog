@@ -50,13 +50,6 @@
   <script>
   import { useUserStore } from '@/stores/user'
   import { USER_SIGNIN } from '@/mutations'
-
-  import { createMemoryHistory, useRoute } from 'vue-router';
-  //import { router } from '@/helpers';
-  
-
-  const route = useRoute();
-  
   
   export default {
     name: "SignInView",

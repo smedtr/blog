@@ -15,6 +15,7 @@ class Query(graphene.ObjectType):
     posts_by_tag = graphene.List(types.PostType, tag=graphene.String())
     #posts_by_slug = graphene.List(types.PostType, slug=graphene.String())
     post_by_slug = graphene.Field(types.PostType, slug=graphene.String())
+    posts_tobe_approved = graphene.List(types.PostType)
 
     current_user = graphene.Field(types.UserType, username=graphene.String())
     
@@ -59,6 +60,11 @@ class Query(graphene.ObjectType):
             models.Post.objects.filter(slug__iexact=slug).first()
         )
     
+    def resolve_posts_tobe_approved(root, info):
+        return (
+            models.Post.objects.filter(is_published=False)
+        )
+
     def resolve_all_users(root, info):
         return (
             models.User.objects.all()
