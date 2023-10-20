@@ -92,7 +92,7 @@
     <!-- Pass the approved comments and the post id to the comment component -->
     <comment-section-component
       v-if="this.approvedComments && this.showComment"
-      :comments="this.approvedComments"
+      :comments="this.approvedComments"      
       :postID="this.postBySlug.id"
       :userID="this.userID"
     ></comment-section-component>
@@ -104,11 +104,17 @@ import { POST_BY_SLUG } from "@/queries";
 import CommentSectionComponent from "@/components/CommentSection.vue";
 import { UPDATE_POST_LIKE } from "@/mutations";
 import { createPopper } from "@popperjs/core";
+import { useUserStore } from "@/stores/user";
 
 export default {
   name: "PostView",
 
   components: { CommentSectionComponent },
+
+  setup() {
+      const userStore = useUserStore();
+      return { userStore };
+    },
 
   data() {
     return {
@@ -126,13 +132,19 @@ export default {
 
   computed: {
     // Filters out the unapproved comments
-    approvedComments() {      
-      return this.comments?.filter((comment) => comment.isApproved);
+    approvedComments() { 
+      //console.log("computed():approvedComments():")   
+      //console.log(this.userID) 
+      //console.log(this.comments)   
+      return this.comments?.filter((comment) => (comment.user.id == this.userID) ||
+                                                (comment.user.id != this.userID && comment.isApproved));
     },
+    
     numberOfApprovedComments() {            
-      //return Object.keys(this.approvedComments).length;
-      return this.approvedComments?.length;
-    },
+      //return Object.keys(this.approvedComments).length;      
+      return this.approvedComments?.filter((comment) => comment.isApproved ).length;      
+    },  
+   
   },
 
   async created() {
@@ -150,7 +162,14 @@ export default {
 
         // Check if the current user has liked the post
         // Get the current user id
-        this.userID = JSON.parse(localStorage.getItem("user")).id;
+       
+        if (this.userStore.getUser.id) {          
+          this.userID = this.userStore.getUser.id
+          //console.log(this.userID)
+        } else {
+          this.userID = null         
+        }
+                   
 
         // Find if the current user has liked the post
         let likedUsers = this.postBySlug.likes;
@@ -160,7 +179,6 @@ export default {
             this.liked = true;
           }
         }
-
 
         // Get the number of likes
         this.numberOfLikes = parseInt(this.postBySlug.numberOfLikes);

@@ -88,6 +88,7 @@ export const POST_BY_SLUG = gql`
         createdAt
         isApproved
         user {
+          id
           username
           avatar
         }

@@ -9,19 +9,20 @@
         class="w-10"
       />
       <p class="text-lg font-sans font-bold">
-        {{ this.comment.user.username }}
+        {{ this.comment.user.username }} 
       </p>
       <p class="text-sm text-gray-500">
         - {{ formatDate(this.comment.createdAt) }}
       </p>
+      <span v-if="this.comment.isApproved != true" class="text-red-500">Not Approved</span>            
     </div>
 
     <p>
       {{ this.comment.content }}
     </p>
 
-    <!-- Like -->
-    <div class="flex flex-wrap py-4 space-x-2 items-center">
+    <!-- Like  will be shown if the comment is approved -->
+    <div v-if="this.comment.isApproved" class="flex flex-wrap py-4 space-x-2 items-center">
       <p class="my-2 text-sm font-medium">Likes:</p>
       <div v-if="this.liked === true" @click="this.updateLike()">
         <i class="fa-solid fa-thumbs-up">
@@ -59,8 +60,7 @@ export default {
       required: true,
     },
     userID: {
-      type: String,
-      required: true,
+      type: String,     
     },
   },
   async created() {
@@ -72,8 +72,7 @@ export default {
         this.liked = true;
       }
     }
-    // Get the number of likes
-    console.log(this.comment.numberOfLikes);
+    // Get the number of likes    
     this.numberOfLikes = parseInt(this.comment.numberOfLikes);
   },
   methods: {

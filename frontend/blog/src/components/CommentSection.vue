@@ -16,7 +16,9 @@
       <!-- If the user is authenticated -->
       <div v-else>
         <div v-if="this.commentSubmitSuccess" class="font-sans text-sm font-normal ml-1">
+          {{ this.commentContent= "" }}
           Your comment will show up here after is has been approved.
+
         </div>
         <form action="POST" @submit.prevent="submitComment">
           <!-- Comment block met text area -->          
@@ -33,8 +35,8 @@
             Submit Comment
           </button>
         </form>
-      </div>
-  
+      </div>    
+      
       <!-- List all comments -->
       <comment-single
         v-for="comment in comments"
@@ -43,6 +45,7 @@
         :userID="this.userID"
       >
       </comment-single>
+
     </div>
   </template>
   
@@ -68,21 +71,20 @@
           isAuthenticated: false,
           token: this.userStore.getToken || "",
           info: this.userStore.getUser || {},
-        },
+        },        
       };
     },
-    props: {
+    props: {      
       comments: {
         type: Array,
         required: true,
-      },
+      },      
       postID: {
         type: String,
         required: true,
       },
       userID: {
-        type: String,
-        required: true,
+        type: String,    
       },
     },
     async created() {
