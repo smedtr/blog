@@ -56,7 +56,7 @@ export default {
   props: {
     posts: {
       type: Array,
-      required: true,      
+      //required: true,  // posts can be empty  
     },
   },
   computed: {

@@ -98,9 +98,14 @@
   
   <script>
   import { mapActions, mapGetters } from "vuex";
+  import { useUserStore } from "@/stores/user";
   
   export default {
     name: "AccountView",
+    setup() {
+      const userStore = useUserStore();    
+      return { userStore };
+    },
     data() {
       return {
         activeTab: 0,
@@ -119,7 +124,8 @@
     },
   
     computed: {
-      ...mapGetters(["isAuthenticated"]),
+      isAuthenticated: this.userStore.getIsLoggedIn,
+      //...mapGetters(["isAuthenticated"]),
     },
   
     methods: {

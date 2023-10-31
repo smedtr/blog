@@ -30,10 +30,18 @@ npm run build
 
 ### Pending Issues
 
-Logout/Login : Signout Signin komt niet goed bv. signout keert hem terug naar het basis scherm waar de logout is gegeven. 
-
-New comment plaatsen bij een post
+Uilezen van de isAuthenticated vanuit de store ipc local storage.
 
 New post kunnen maken
 
-Resresh gaan doen van de JWT : Zie ook https://jasonwatmore.com/vue-3-pinia-jwt-authentication-with-refresh-tokens-example-tutorial
+Refresh gaan doen van de JWT : Zie ook https://jasonwatmore.com/vue-3-pinia-jwt-authentication-with-refresh-tokens-example-tutorial
+
+Bij logout/login neemt de router de history -1 nu als dan het vorige scherm niet OK (vb login scherm) dan krijg je een verkeerd scherm.
+Beter zou zijn om een vast of een conditioneel re-routing te gaan doen.
+
+Bij het selecteren van All Categories en Tags -> pagineren. Dit is nu een dummy pagina
+
+Ongoing : user/Account.vue mag verwijderd worden. Geen idee waar dit scherm voor dient is vervangen door Signup, Profile.
+
+Done :Logout/Login : Signout Signin komt niet goed bv. signout keert hem terug naar het basis scherm waar de logout is gegeven. 
+Done : New comment plaatsen bij een post
