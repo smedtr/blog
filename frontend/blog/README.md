@@ -42,6 +42,8 @@ Beter zou zijn om een vast of een conditioneel re-routing te gaan doen.
 Bij het selecteren van All Categories en Tags -> pagineren. Dit is nu een dummy pagina
 - Graphene-Django : https://docs.graphene-python.org/projects/django/en/latest/
 - https://www.fullstacklabs.co/blog/django-graphene-rest-graphql
+- Krijg een fout bij Connection : https://stackoverflow.com/questions/74163906/typeerror-query-fields-cannot-be-resolved-the-type-questionnairetype-doesnt-h
+
 
 Ongoing : user/Account.vue mag verwijderd worden. Geen idee waar dit scherm voor dient is vervangen door Signup, Profile.
 

@@ -1,12 +1,29 @@
 import graphene
+from graphene import relay
+from graphene_django.filter import DjangoFilterConnectionField
+from graphene_django import DjangoObjectType
+
 from blog import models
 from blog import types
+
+# The specific 
+class PostsPaginatedType(DjangoObjectType):
+    class Meta:
+        model = models.Post
+        interfaces = (relay.Node,)  # make sure you add this
+        fields = "__all__"
+
+class PostsPaginatedConnection(relay.Connection):
+    class Meta:
+        node = PostsPaginatedType
+#
 
 # The query class
 class Query(graphene.ObjectType):
     site = graphene.Field(types.SiteType) 
 
     all_posts = graphene.List(types.PostType)
+    
     all_categories = graphene.List(types.CategoryType)
     all_tags = graphene.List(types.TagType)
     all_users = graphene.List(types.UserType)
@@ -19,6 +36,10 @@ class Query(graphene.ObjectType):
 
     current_user = graphene.Field(types.UserType, username=graphene.String())
     
+    all_posts_paginated = relay.ConnectionField(PostsPaginatedConnection)
+
+    def resolve_all_posts_paginated(root, info, **kwargs):
+        return models.Post.objects.all()
 
     def resolve_site(root, info):
         return (
