@@ -14,7 +14,7 @@ class TagAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
-    list_display = ('title', 'is_published', 'is_featured', 'created_at')
+    list_display = ('title','category','is_published', 'is_featured', 'created_at')
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'is_approved', 'created_at')
