@@ -23,8 +23,18 @@ class TagType(DjangoObjectType):
 
 class PostType(DjangoObjectType):
     class Meta:
+        model = models.Post        
+
+    number_of_likes = graphene.String()    
+
+    def resolve_number_of_likes(self, info):
+        return self.get_number_of_likes()
+    
+class PostsPaginatedType(DjangoObjectType):
+    class Meta:
         model = models.Post
-        #interfaces = (relay.Node,)
+        interfaces = (relay.Node,)  # make sure you add this
+        fields = "__all__"
 
     number_of_likes = graphene.String()    
 
@@ -40,10 +50,4 @@ class CommentType(DjangoObjectType):
     def resolve_number_of_likes(self, info):
         return self.get_number_of_likes()
     
-
-# Define Connection
-#class PostConnection(relay.connection):
-#    class Meta:
-#        node = PostType
-
 
