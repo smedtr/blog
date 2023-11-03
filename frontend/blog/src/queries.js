@@ -26,8 +26,8 @@ export const ALL_POSTS = gql`
 `;
 
 export const ALL_POSTS_PAG = gql`
-  query {
-    allPostsPaginated(first: 10) {
+  query ($defaultNumberOfPosts: Int!, $startCursor: String) {
+    allPostsPaginated(first: $defaultNumberOfPosts, after: $startCursor) {
       edges {
         cursor
         node {
