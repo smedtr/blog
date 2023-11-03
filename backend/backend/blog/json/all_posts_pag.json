@@ -1,0 +1,164 @@
+{
+  "data": {
+    "allPostsPaginated": {
+      "edges": [
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjA=",
+          "node": {
+            "title": "Error upload picture into Site model",
+            "slug": "error-upload-picture-into-site-model",
+            "content": "<p>Error upload picture into Site model</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-09-27",
+            "category": {
+              "name": "Django Devel",
+              "slug": "django-devel"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjE=",
+          "node": {
+            "title": "Bij de opstart fout dat er geen posts te vinden zijn",
+            "slug": "bij-de-opstart-fout-dat-er-geen-posts-te-vinden-zi",
+            "content": "<p>Bij de opstart fout dat er geen posts te vinden zijn&nbsp;</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-10-02",
+            "category": {
+              "name": "VUE Dev",
+              "slug": "vue-dev"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjI=",
+          "node": {
+            "title": "Burrito methode om je dekbed op te maken",
+            "slug": "burrito-methode-om-je-dekbed-op-te-maken",
+            "content": "<p>Hoe krijg je het snelste - en vooral zonder al te veel frustratie - je donsdeken in je dekbedovertrek? Het is een universele zoektocht, maar Jolien liet ons in &lsquo;Blind getrouwd&rsquo; zien hoe zij dat in een oogwenk klaarkrijgt. Om fans alle stappen van haar methode volledig duidelijk te maken, deelt ze nu ook een instructie-video op Instagram</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-10-13",
+            "category": {
+              "name": "Django Devel",
+              "slug": "django-devel"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjM=",
+          "node": {
+            "title": "Ilja Leonard Pfeijffer – Alkibiades",
+            "slug": "ilja-leonard-pfeijffer-alkibiades",
+            "content": "<p>Al twintig jaar wist &shy;<strong>Ilja &shy;Leonard &shy;Pfeijffer</strong>&nbsp;dat hij ooit een roman over natuurkracht Alkibiades zou schrijven. Dat boek is er nu, en zet met&shy;een een nieuwe standaard voor de historische roman.</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-11-02",
+            "category": {
+              "name": "Literatuur",
+              "slug": "literatuur"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjQ=",
+          "node": {
+            "title": "Sergej Dovlatov – Omtrekkende bewegingen",
+            "slug": "sergej-dovlatov-omtrekkende-bewegingen",
+            "content": "<p>Vraag een Rus naar zijn favoriete Russische schrijver en de kans is groot dat het antwoord &lsquo;Dovlatov&rsquo; luidt.&nbsp;<strong>Sergej Dovlatov</strong>&nbsp;(1941-1990) is de auteur van een relatief klein maar eigenzinnig en nog altijd immens populair oeuvre. In z&rsquo;n eentje heeft Dovlatov de grenzen van de Russische literatuur verlegd. Lees hem.</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-11-02",
+            "category": {
+              "name": "Literatuur",
+              "slug": "literatuur"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjU=",
+          "node": {
+            "title": "Karin Slaughter – Na die nacht ★★★★½",
+            "slug": "karin-slaughter-na-die-nacht",
+            "content": "<p>&lsquo;Na die nacht&rsquo; is alweer een mokerslag van een roman over de nawee&euml;n van geweld. Een intens boek waar je geregeld heel stil van wordt &ndash; en een geweldig goed geschreven thriller, dat ook. Voorlopig stoot niemand koningin&nbsp;<strong>Karin Slaughter&nbsp;</strong>van haar troon.</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-11-02",
+            "category": {
+              "name": "Literatuur",
+              "slug": "literatuur"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjY=",
+          "node": {
+            "title": "Jean-Baptiste Andréa – Honderd miljoen jaar en een dag ★★★★½",
+            "slug": "jean-baptiste-andrea-honderd-miljoen-jaar-en-een-d",
+            "content": "<p><strong>Jean-Baptiste Andrea&nbsp;</strong>heeft ontzettend weinig woorden nodig om zijn hoofdpersonage in te kleuren en zijn lezers te raken. &lsquo;Honderd miljoen jaar en een dag&rsquo; is een indrukwekkende roman over volharding, hoop, vriendschap en de klim uit het diepe dal van een verschrikkelijke kindertijd</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-11-02",
+            "category": {
+              "name": "Literatuur",
+              "slug": "literatuur"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjc=",
+          "node": {
+            "title": "Frits van Oostrom – De Reynaert ★★★★½",
+            "slug": "frits-van-oostrom-de-reynaert",
+            "content": "<p><strong>Frits van Oostrom</strong>&nbsp;is &eacute;&eacute;n van de weinige wetenschappers die met zijn publicaties het grote publiek weet te raken. Hij schreef een vederlicht en soepel essay over Reynaert de Vos waarmee hij niet enkel vakgenoten maar ook millennials zal weten te inspireren.</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-11-02",
+            "category": {
+              "name": "Literatuur",
+              "slug": "literatuur"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjg=",
+          "node": {
+            "title": "Merethe Lindstrom – Dagen in de geschiedenis van stilte ★★★★½",
+            "slug": "merethe-lindstrom-dagen-in-de-geschiedenis-van-sti",
+            "content": "<p>Voor &lsquo;Dagen in de geschiedenis van stilte&rsquo; kreeg&nbsp;<strong>Merethe Lindstrom</strong>&nbsp;een belangrijke Noorse literaire prijs. Terecht, want de roman getuigt op een uiterst intieme manier van trieste gebeurtenissen die alleen maar beklemmender worden als er niet over gesproken mag worden. Het verleden kan nooit ongedaan worden gemaakt, toont Lindstrom, hoezeer het ook wordt toegedekt.</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-11-02",
+            "category": {
+              "name": "Literatuur",
+              "slug": "literatuur"
+            }
+          }
+        },
+        {
+          "cursor": "YXJyYXljb25uZWN0aW9uOjk=",
+          "node": {
+            "title": "J.M. Coetzee – De Pool ★★★★½",
+            "slug": "jm-coetzee-de-pool",
+            "content": "<p>De centrale figuur: de Pool Witold Walczykiewicz. Op uitnodiging van een culturele vereniging landt hij in Barcelona. De 48-jarige bankiersvrouw Beatriz moet hem opvangen. In haar naam klinkt Dante&rsquo;s Beatrice door. De Pool is 72, hij heeft furore gemaakt met zijn interpretaties van Chopin en komt die nu ten gehore brengen voor de bemiddelde en burgerlijke Barcelonese melomanen.</p>",
+            "isPublished": true,
+            "isFeatured": false,
+            "createdAt": "2023-11-02",
+            "category": {
+              "name": "Literatuur",
+              "slug": "literatuur"
+            }
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "YXJyYXljb25uZWN0aW9uOjk=",
+        "hasNextPage": true,
+        "hasPreviousPage": false,
+        "startCursor": "YXJyYXljb25uZWN0aW9uOjA="
+      }
+    }
+  }
+}

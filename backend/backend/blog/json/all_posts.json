@@ -1,0 +1,226 @@
+{
+    "data": {
+      "allPosts": [
+        {
+          "title": "Error upload picture into Site model",
+          "slug": "error-upload-picture-into-site-model",
+          "content": "<p>Error upload picture into Site model</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Django Devel",
+            "slug": "django-devel"
+          }
+        },
+        {
+          "title": "Bij de opstart fout dat er geen posts te vinden zijn",
+          "slug": "bij-de-opstart-fout-dat-er-geen-posts-te-vinden-zi",
+          "content": "<p>Bij de opstart fout dat er geen posts te vinden zijn&nbsp;</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "VUE Dev",
+            "slug": "vue-dev"
+          }
+        },
+        {
+          "title": "Burrito methode om je dekbed op te maken",
+          "slug": "burrito-methode-om-je-dekbed-op-te-maken",
+          "content": "<p>Hoe krijg je het snelste - en vooral zonder al te veel frustratie - je donsdeken in je dekbedovertrek? Het is een universele zoektocht, maar Jolien liet ons in &lsquo;Blind getrouwd&rsquo; zien hoe zij dat in een oogwenk klaarkrijgt. Om fans alle stappen van haar methode volledig duidelijk te maken, deelt ze nu ook een instructie-video op Instagram</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Django Devel",
+            "slug": "django-devel"
+          }
+        },
+        {
+          "title": "Ilja Leonard Pfeijffer – Alkibiades",
+          "slug": "ilja-leonard-pfeijffer-alkibiades",
+          "content": "<p>Al twintig jaar wist &shy;<strong>Ilja &shy;Leonard &shy;Pfeijffer</strong>&nbsp;dat hij ooit een roman over natuurkracht Alkibiades zou schrijven. Dat boek is er nu, en zet met&shy;een een nieuwe standaard voor de historische roman.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "Sergej Dovlatov – Omtrekkende bewegingen",
+          "slug": "sergej-dovlatov-omtrekkende-bewegingen",
+          "content": "<p>Vraag een Rus naar zijn favoriete Russische schrijver en de kans is groot dat het antwoord &lsquo;Dovlatov&rsquo; luidt.&nbsp;<strong>Sergej Dovlatov</strong>&nbsp;(1941-1990) is de auteur van een relatief klein maar eigenzinnig en nog altijd immens populair oeuvre. In z&rsquo;n eentje heeft Dovlatov de grenzen van de Russische literatuur verlegd. Lees hem.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "Karin Slaughter – Na die nacht ★★★★½",
+          "slug": "karin-slaughter-na-die-nacht",
+          "content": "<p>&lsquo;Na die nacht&rsquo; is alweer een mokerslag van een roman over de nawee&euml;n van geweld. Een intens boek waar je geregeld heel stil van wordt &ndash; en een geweldig goed geschreven thriller, dat ook. Voorlopig stoot niemand koningin&nbsp;<strong>Karin Slaughter&nbsp;</strong>van haar troon.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "Jean-Baptiste Andréa – Honderd miljoen jaar en een dag ★★★★½",
+          "slug": "jean-baptiste-andrea-honderd-miljoen-jaar-en-een-d",
+          "content": "<p><strong>Jean-Baptiste Andrea&nbsp;</strong>heeft ontzettend weinig woorden nodig om zijn hoofdpersonage in te kleuren en zijn lezers te raken. &lsquo;Honderd miljoen jaar en een dag&rsquo; is een indrukwekkende roman over volharding, hoop, vriendschap en de klim uit het diepe dal van een verschrikkelijke kindertijd</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "Frits van Oostrom – De Reynaert ★★★★½",
+          "slug": "frits-van-oostrom-de-reynaert",
+          "content": "<p><strong>Frits van Oostrom</strong>&nbsp;is &eacute;&eacute;n van de weinige wetenschappers die met zijn publicaties het grote publiek weet te raken. Hij schreef een vederlicht en soepel essay over Reynaert de Vos waarmee hij niet enkel vakgenoten maar ook millennials zal weten te inspireren.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "Merethe Lindstrom – Dagen in de geschiedenis van stilte ★★★★½",
+          "slug": "merethe-lindstrom-dagen-in-de-geschiedenis-van-sti",
+          "content": "<p>Voor &lsquo;Dagen in de geschiedenis van stilte&rsquo; kreeg&nbsp;<strong>Merethe Lindstrom</strong>&nbsp;een belangrijke Noorse literaire prijs. Terecht, want de roman getuigt op een uiterst intieme manier van trieste gebeurtenissen die alleen maar beklemmender worden als er niet over gesproken mag worden. Het verleden kan nooit ongedaan worden gemaakt, toont Lindstrom, hoezeer het ook wordt toegedekt.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "J.M. Coetzee – De Pool ★★★★½",
+          "slug": "jm-coetzee-de-pool",
+          "content": "<p>De centrale figuur: de Pool Witold Walczykiewicz. Op uitnodiging van een culturele vereniging landt hij in Barcelona. De 48-jarige bankiersvrouw Beatriz moet hem opvangen. In haar naam klinkt Dante&rsquo;s Beatrice door. De Pool is 72, hij heeft furore gemaakt met zijn interpretaties van Chopin en komt die nu ten gehore brengen voor de bemiddelde en burgerlijke Barcelonese melomanen.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "Sebastian Barry – De verre voortijd ★★★★½",
+          "slug": "sebastian-barry-de-verre-voortijd",
+          "content": "<p>Een gepensioneerde politieman wordt uit zijn eenzame afzondering opgeschrikt door twee agenten met vragen over een oude, onopgeloste zaak. In zijn nieuwe roman herwerkt de Ierse toneelschrijver, dichter en romancier&nbsp;<strong>Sebastian Barry</strong>&nbsp;het beproefde genre van de cold case-thriller met grote literaire finesse.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "Ian McEwan – Lessen ★★★★½",
+          "slug": "ian-mcewan-lessen",
+          "content": "<p>De term &lsquo;magnum opus&rsquo; dekt in het geval van de nieuwe<strong>&nbsp;Ian McEwan</strong>&nbsp;de lading. In &lsquo;Lessen&rsquo;, zijn achttiende en met 576 bladzijden veruit zijn dikste roman tot dusver, portretteert Ian McEwan &eacute;&eacute;n mensenleven, dat zich afspeelt tussen 1948 (zijn eigen geboortejaar) en vandaag. De meester van de bondigheid heeft zich tijdens de lockdown kennelijk laten gaan en zich voor &eacute;&eacute;n keer gewaagd aan breedvoerige epiek.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "Mathijs de Ridder - De dichter die de wereld wilde veranderen ★★★★☆",
+          "slug": "mathijs-de-ridder-de-dichter-die-de-wereld-wilde-v",
+          "content": "<p>Wat in de levensbeschrijving van&nbsp;<strong>Paul van Ostaijen&nbsp;</strong>meest verrast, is dat zijn experimentele po&euml;zie blijkt te wortelen in een temperament dat gevormd was in de klassieke Vlaamse beweging. &lsquo;Zot Polleken&rsquo; was dichter en dandy, maar ook flamingant. Zijn activisme, zijn liefde voor Emmeke, de expressionistische jaren in Berlijn, de outfits waarin hij zich uitdoste, de tragische dood: het staat 95 jaar na zijn dood voor het eerst allemaal samen te lezen in Matthijs de Ridders voortreffelijke biografie over Vlaanderens grootste modernist.</p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Literatuur",
+            "slug": "literatuur"
+          }
+        },
+        {
+          "title": "HET SMELT (2023)",
+          "slug": "het-smelt-2023",
+          "content": "<p><strong>Doen, durf of de waarheid. We hebben het allemaal weleens gespeeld tijdens een feestje. Maar zulke spelletjes kunnen snel uit de hand lopen.&nbsp;<em>Het Smelt</em>&nbsp;gaat over zo&#39;n soort spelletje dat tijdens een broeiende zomer totaal escaleert met verschrikkelijke gevolgen.</strong></p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Film",
+            "slug": "film"
+          }
+        },
+        {
+          "title": "REALITY (2023)",
+          "slug": "reality-2023",
+          "content": "<p><strong>tel, je vindt geheime informatie over een extreem controversi&euml;le kwestie die de koers van de geschiedenis mogelijk kan veranderen. Zou je dit bekendmaken? En wat nou als er een zware straf op staat? Reality Winner vond zichzelf geconfronteerd met dit dilemma en deze film is de onfortuinlijke uitwas van haar beslissing. Regisseuse Tina Satter, die er ook al een toneelstuk over maakte, debuteert met dit minimalistische docudrama. Ze laat meteen zien dat ze van wanten weet. De film is namelijk in slechts zestien dagen geschoten.</strong></p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Film",
+            "slug": "film"
+          }
+        },
+        {
+          "title": "WHITE PLASTIC SKY (2023)",
+          "slug": "white-plastic-sky-2023",
+          "content": "<p><strong>Momenteel zien we de immense gevolgen van klimaatverandering. Alle hitterecords worden verbroken, de insectenpopulatie neemt drastisch af en de kans op mislukte oogsten neemt zorgwekkend toe. Het doemscenario: de aarde verandert in een volstrekt onleefbare planeet. Hoe ver het ook mag komen, mensen zullen hun levensstijlen moeten aanpassen. Een van de verschrikkelijkste uitkomsten is de dystopie in&nbsp;<em>White Plastic Sky</em></strong></p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Film",
+            "slug": "film"
+          }
+        },
+        {
+          "title": "KILLERS OF THE FLOWER MOON (2023)",
+          "slug": "killers-of-the-flower-moon-2023",
+          "content": "<p><strong>Alsof het nog niet genoeg was dat witte immigranten de inheemse Amerikaanse bevolking verdreven, voltrok zich in het interbellum nog een ander drama. In de staat Oklahoma werd olie gevonden. Pech voor de witte &#39;nieuwe&#39; Amerikanen dat dit veelal plaatsvond in de reservaten van de inheemse bevolking. Daar werd een wrede &#39;oplossing&#39; voor gevonden. Vele inheemse Amerikanen werden vermoord om hun rijkdom en olierechten</strong></p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Film",
+            "slug": "film"
+          }
+        },
+        {
+          "title": "ANATOMY OF A FALL (2023)",
+          "slug": "anatomy-of-a-fall-2023",
+          "content": "<p><strong>Uit de speakers op een zolderkamer in een afgelegen chalet in de Franse Alpen schallen de instrumentale klanken van 50 Cents P.I.M.P. Een van de bewoners, schrijver en leraar Sandra Voyter, moet het gesprek met een van haar studenten staken omdat ze elkaar niet meer kunnen verstaan. Waarom haar echtgenoot haar zo traineert wordt pas later duidelijk.</strong></p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Film",
+            "slug": "film"
+          }
+        },
+        {
+          "title": "WIL (2023)",
+          "slug": "wil-2023",
+          "content": "<p><strong>Hoe maak je een opvolger van een droog-absurdistische klucht over iemand die zijn hamer kwijt is op een naturistencamping? Met een genuanceerd portret van de ingewikkelde rol van de Antwerpse politiemacht ten tijde van de Duitse bezetting natuurlijk! Het Belgische toptalent Tim Mielants timmert internationaal flink aan de weg, en regisseerde onder andere afleveringen van&nbsp;<em>Peaky Blinders</em>&nbsp;en&nbsp;<em>Legion</em>. Maar met zijn Vlaamse films laat hij pas &eacute;cht zien wat hij in huis heeft</strong></p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Film",
+            "slug": "film"
+          }
+        },
+        {
+          "title": "OPPENHEIMER (2023)",
+          "slug": "oppenheimer-2023",
+          "content": "<p><strong>&quot;Nu word ik de Dood, vernietiger van werelden.&quot; Dit mompelt de Amerikaanse natuurkundige Julius Robert Oppenheimer na de succesvolle proef met de atoombom in Los Alamos in New Mexico. Niet lang daarna schrok de wereld op door de bombardementen op de Japanse steden Hiroshima en Nagasaki. Het leidde tot tweehonderdduizend directe en indirecte doden en luidde het einde van de Tweede Wereldoorlog in.</strong></p>",
+          "isPublished": true,
+          "isFeatured": false,
+          "category": {
+            "name": "Film",
+            "slug": "film"
+          }
+        }
+      ]
+    }
+  }

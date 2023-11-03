@@ -12,7 +12,7 @@
 <script>
 // @ is an alias to /src
 import PostList from "@/components/PostList.vue";
-import { ALL_POSTS } from "@/queries";
+import { ALL_POSTS_PAG } from "@/queries";
 
 export default {
   components: { PostList },
@@ -25,10 +25,29 @@ export default {
   },
 
   async created() {
-    const posts = await this.$apollo.query({
-      query: ALL_POSTS,
+    // Query vervangen door een paginated query nu met default 10 items
+    //const posts = await this.$apollo.query({
+    //  query: ALL_POSTS,
+    //});
+    //this.allPosts = posts.data.allPosts;
+    
+    const posts_pag = await this.$apollo.query({
+      query: ALL_POSTS_PAG,
     });
-    this.allPosts = posts.data.allPosts;
+    this.allPosts_pag = posts_pag.data.allPostsPaginated.edges        
+    this.allPosts_pag_pageinfo = posts_pag.data.allPostsPaginated.pageInfo
+    //console.log(this.allPosts_pag)
+    //console.log(this.allPosts_pag_pageinfo) 
+    this.allPosts = []   
+    this.allPosts_pag.forEach(node => {                
+      //this.post = {        
+      //  "cursor": node.cursor, 
+      //  "data": node.node,
+      //} 
+      //this.allPostsPag.push(this.post)     
+      this.allPosts.push(node.node)
+    });       
+    //console.log(this.allPosts)
   },
 };
 </script>

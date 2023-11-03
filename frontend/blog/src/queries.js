@@ -25,6 +25,34 @@ export const ALL_POSTS = gql`
   }
 `;
 
+export const ALL_POSTS_PAG = gql`
+  query {
+    allPostsPaginated(first: 10) {
+      edges {
+        cursor
+        node {
+          title
+          slug
+          content
+          isPublished
+          isFeatured
+          createdAt
+          category {
+            name
+            slug
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+        hasPreviousPage
+        startCursor
+      }
+    }
+  }
+`;
+
 export const POSTS_BY_CATEGORY = gql`
   query ($category: String!) {
     postsByCategory(category: $category) {
