@@ -47,6 +47,7 @@
         </article>
       </li>
     </ul>
+    
   </div>
 </template>
 

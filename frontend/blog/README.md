@@ -44,6 +44,7 @@ Bij het selecteren van All Categories en Tags -> pagineren. Dit is nu een dummy 
 - https://www.fullstacklabs.co/blog/django-graphene-rest-graphql
 - Krijg een fout bij Connection : https://stackoverflow.com/questions/74163906/typeerror-query-fields-cannot-be-resolved-the-type-questionnairetype-doesnt-h
 
+Ongoing : Pagineren bij AllPosts. Voorlopig alleen maar Next. Maar wie wil er nu achteruit ;-) 
 
 Ongoing : user/Account.vue mag verwijderd worden. Geen idee waar dit scherm voor dient is vervangen door Signup, Profile.
 

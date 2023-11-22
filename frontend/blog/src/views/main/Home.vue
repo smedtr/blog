@@ -8,10 +8,10 @@
     <post-list :posts="this.allPosts"></post-list>
 
     <div class="space-y-2 pt-6 pb-8 md:space-y-5">
-      <nav class="flex justify-between">
-        <button rel="previous">Previous</button>
-        <span>1 of 2</span>
-        <button rel="next">Next</button>
+      <nav class="flex justify-between">       
+        <button rel="previous" v-on:click="prev_posts('Previous')">Previous</button>
+        <span>1 of 2</span>       
+        <button rel="next" :disabled="!hasNextPage" v-on:click="next_posts('Next')">Next</button>
       </nav>
     </div>
   
@@ -24,15 +24,53 @@
 import PostList from "@/components/PostList.vue";
 import { ALL_POSTS_PAG } from "@/queries";
 
+
 export default {
   components: { PostList },
   name: "HomeView",
+
+  methods: {
+    //say: function (message) {
+    next_posts(message) {      
+      //alert(message + "->" +
+      //      this.allPosts_pag_pageinfo.endCursor +
+      //      " hasNextPage=" + this.allPosts_pag_pageinfo.hasNextPage)      
+      if (this.allPosts_pag_pageinfo.hasNextPage) { 
+        this.endCursor = this.allPosts_pag_pageinfo.endCursor      
+        this.$apollo.query({
+          variables: {
+            defaultNumberOfPosts: this.defaultNumberOfPosts,
+            startCursor: this.endCursor
+          },
+          query: ALL_POSTS_PAG,
+        }).then(next_posts_pag => {          
+          this.next_posts_pag = next_posts_pag.data.allPostsPaginated.edges        
+          this.allPosts_pag_pageinfo = next_posts_pag.data.allPostsPaginated.pageInfo
+            
+          this.next_posts_pag.forEach(node => {      
+            this.allPosts.push(node.node)
+          });  
+
+          this.hasNextPage = this.allPosts_pag_pageinfo.hasNextPage
+        });   
+      }   
+      // https://vue-apollo.netlify.app/guide/apollo/queries.html#simple-query
+      
+      
+    },
+
+    prev_posts(message) {
+      console.log("prev_posts()-start:"+ message)   
+      console.log("prev_posts()-end")
+    }
+  },
 
   data() {
     return {
       allPosts: [], // return an empty array to please the prop definition
       defaultNumberOfPosts: 5, // returns by default number of posts
-      startCursor: "" // returns from a specific cursor for paging 
+      startCursor: "", // returns from a specific cursor for paging 
+      hasNextPage: true
     };
   },
 
@@ -52,15 +90,11 @@ export default {
     console.log(`startCursor= ` + this.startCursor)
     console.log(`lastCursor= ` + this.allPosts_pag_pageinfo.endCursor)
       
-    this.allPosts_pag.forEach(node => {                
-      //this.post = {        
-      //  "cursor": node.cursor, 
-      //  "data": node.node,
-      //} 
-      //this.allPostsPag.push(this.post)     
+    this.allPosts_pag.forEach(node => {     
       this.allPosts.push(node.node)
     });       
     
+    this.hasNextPage = this.allPosts_pag_pageinfo.hasNextPage
   },
 };
 </script>
