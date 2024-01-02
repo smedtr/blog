@@ -53,6 +53,62 @@ export const ALL_POSTS_PAG = gql`
   }
 `;
 
+export const POSTS_BY_TAG_PAG = gql`
+  query ($tag: String!, $defaultNumberOfPosts: Int!, $startCursor: String) { 
+    allPostsByTagPaginated(tag_Slug: $tag, first: $defaultNumberOfPosts, after: $startCursor) {
+      edges {
+        cursor
+        node {
+          title
+          slug
+          content
+          isPublished
+          isFeatured
+          createdAt
+          category {
+            name
+            slug
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+        hasPreviousPage
+        startCursor
+      }      
+    }
+  }
+`;
+
+export const POSTS_BY_TAG_MY_PAG = gql`
+  query ($tag: String!, $defaultNumberOfPosts: Int!, $startCursor: String) { 
+    allPostsByTagPaginated(tag_Slug: $tag, first: $defaultNumberOfPosts, after: $startCursor) {
+      edges {
+        cursor
+        node {
+          title
+          slug
+          content
+          isPublished
+          isFeatured
+          createdAt
+          category {
+            name
+            slug
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+        hasPreviousPage
+        startCursor       
+      }      
+    }
+  }
+`;
+
 export const POSTS_BY_CATEGORY = gql`
   query ($category: String!) {
     postsByCategory(category: $category) {

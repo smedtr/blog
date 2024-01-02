@@ -6,15 +6,9 @@
     </p>
 
     <post-list :posts="this.allPosts"></post-list>
+    
+    <pages-footer :hasNextPage="this.hasNextPage" @nextPosts="next_posts('Next')" :hasPrevPage="this.hasPrevPage"></pages-footer>
 
-    <div class="space-y-2 pt-6 pb-8 md:space-y-5">
-      <nav class="flex justify-between">       
-        <button rel="previous" v-on:click="prev_posts('Previous')">Previous</button>
-        <span>1 of 2</span>       
-        <button rel="next" :disabled="!hasNextPage" v-on:click="next_posts('Next')">Next</button>
-      </nav>
-    </div>
-  
 
   </div>
 </template>
@@ -22,11 +16,12 @@
 <script>
 // @ is an alias to /src
 import PostList from "@/components/PostList.vue";
+import PagesFooter from "@/components/PagFooter.vue";
 import { ALL_POSTS_PAG } from "@/queries";
 
 
 export default {
-  components: { PostList },
+  components: { PostList, PagesFooter },
   name: "HomeView",
 
   methods: {
@@ -70,7 +65,8 @@ export default {
       allPosts: [], // return an empty array to please the prop definition
       defaultNumberOfPosts: 5, // returns by default number of posts
       startCursor: "", // returns from a specific cursor for paging 
-      hasNextPage: true
+      hasNextPage: false,
+      hasPrevPage: false,
     };
   },
 

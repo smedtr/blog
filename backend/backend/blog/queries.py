@@ -1,9 +1,12 @@
 import graphene
+from graphene_django import DjangoObjectType
+from graphene_django.filter import DjangoFilterConnectionField
 from graphene import relay
 
 from blog import models
 from blog import types
 from blog import connections
+
 
 # The query class
 class Query(graphene.ObjectType):
@@ -22,12 +25,23 @@ class Query(graphene.ObjectType):
     posts_tobe_approved = graphene.List(types.PostType)
 
     current_user = graphene.Field(types.UserType, username=graphene.String())
+    ###
+    # Relay style met pagination
+    ###all_posts_paginated = relay.ConnectionField(connections.PostsPaginatedConnection)  
+    all_posts_paginated = DjangoFilterConnectionField(types.PostNode)#   
+    #### WorkInProgress    
+    relay_post_by_id = relay.Node.Field(types.PostNode)     
+    all_posts_by_tag_paginated = DjangoFilterConnectionField(types.PostNode)
+    ####
     
-    all_posts_paginated = relay.ConnectionField(connections.PostsPaginatedConnection)
+    #def resolve_all_posts_paginated(root, info, **kwargs):
+    #    return models.Post.objects.all()
 
-    def resolve_all_posts_paginated(root, info, **kwargs):
-        return models.Post.objects.all()
-
+    def resolve_posts_by_tag_paginated(root, info, tag, **kwargs):
+        return (
+            models.Post.objects.filter(tag__slug__iexact=tag)
+        )
+    
     def resolve_site(root, info):
         return (
             models.Site.objects.first()
@@ -56,13 +70,8 @@ class Query(graphene.ObjectType):
     def resolve_posts_by_tag(root, info, tag):
         return (
             models.Post.objects.filter(tag__slug__iexact=tag)
-        )
-    
-    #def resolve_posts_by_slug(root, info, slug):
-    #    return (
-    #        models.Post.objects.filter(slug__iexact=slug)
-    #    )
-    
+        )    
+       
     def resolve_post_by_slug(root, info, slug):
         return (
             models.Post.objects.filter(slug__iexact=slug).first()

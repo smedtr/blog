@@ -7,39 +7,73 @@
 
     <post-list :posts="postsByTag"></post-list>
 
-    <div class="space-y-2 pt-6 pb-8 md:space-y-5">
-      <nav class="flex justify-between">
-        <button rel="previous">Previous</button>
-        <span>1 of 2</span>
-        <button rel="next">Next</button>
-      </nav>
-    </div>
+    <pages-footer :hasNextPage="this.hasNextPage" @nextPosts="next_posts('Next')" :hasPrevPage="this.hasPrevPage"></pages-footer>
+    
   </div>
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useQuery } from '@vue/apollo-composable'
+import gql from 'graphql-tag'
 // @ is an alias to /src
 import PostList from "@/components/PostList.vue";
-import { POSTS_BY_TAG } from "@/queries";
+import PagesFooter from "@/components/PagFooter.vue";
+import { POSTS_BY_TAG_PAG } from "@/queries";
+import { ALL_CATEGORIES } from "@/queries";
 
 export default {
-  components: { PostList },
+  components: { PostList,PagesFooter },
   name: "TagView",
 
   data() {
     return {
-      postsByTag: null,
+      postsByTag: [],
+      allCategories: [],
+      hasPrevPage: false,
+      hasNextPage: true,
+      defaultNumberOfPosts: 5,
     };
   },
 
-  async created() {
-    const posts = await this.$apollo.query({
-      query: POSTS_BY_TAG,
+  methods: {
+    prev_posts(message) {
+      console.log("Tag.vue->prev_posts()-start:"+ message)   
+      // https://vueschool.io/articles/vuejs-tutorials/infinite-scrolling-in-vue-with-apollo/
+      console.log("Tag.vue->prev_posts()-end")
+    },
+    next_posts(message) {
+      console.log("Tag.vue->prev_posts()-start:"+ message)       
+      console.log("Tag.vue->prev_posts()-end")
+    }
+  },
+
+  setup() {    
+    //
+  },
+  
+  async created() {  
+    this.$apollo.query({
+      query: POSTS_BY_TAG_PAG,
       variables: {
         tag: this.$route.params.tag,
+        defaultNumberOfPosts: this.defaultNumberOfPosts,
+        startCursor: this.endCursor,
       },
-    });
-    this.postsByTag = posts.data.postsByTag;
+    }).then(posts => {   
+      this.postsByTag_pag = posts.data.allPostsByTagPaginated.edges  
+      this.postsByTag_pageinfo_pag = posts.data.allPostsByTagPaginated.pageInfo    
+      
+      this.postsByTag_pag.forEach(node => {           
+        this.postsByTag.push(node.node)
+      }); 
+      this.hasNextPage = this.postsByTag_pageinfo_pag.hasNextPage
+      this.hasPrevPage = this.postsByTag_pageinfo_pag.hasPrevPage
+    }).else(
+      console.log("Tag.vue-> created() POSTS_BY_TAG_PAG Error = "+ this.postsByTag_pag) 
+    )  
+    
   },
+  
 };
 </script>
